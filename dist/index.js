@@ -31,7 +31,7 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const ip_1 = __importDefault(require("./routes/ip"));
 const app = (0, express_1.default)();
-app.set("trust-proxy", 1);
+app.set("trust-proxy", true);
 app.disable("x-powered-by");
 app.get("/", (req, res) => {
     res.redirect("/ip");
