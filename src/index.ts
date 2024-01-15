@@ -10,7 +10,7 @@ app.set("trust-proxy", 1);
 app.disable("x-powered-by");
 
 app.get("/", (req, res) => {
-  res.redirect("https://zurly.me");
+  res.redirect("/ip");
 });
 
 app.use("/ip", ipRoute);
