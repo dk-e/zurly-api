@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 router.get("/", (req, res) => {
-    const ip = req.socket.remoteAddress;
+    const ip = req.headers["x-real-ip"] || req.socket.remoteAddress;
     res.type("text/plain");
     res.send(ip);
 });
