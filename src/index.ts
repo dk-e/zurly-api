@@ -14,7 +14,11 @@ app.disable("x-powered-by");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.redirect("/ip");
+  const home = {
+    success: false,
+    message: "Missing authorisation key",
+  };
+  res.json(home);
 });
 
 app.use("/ip", ipRoute);

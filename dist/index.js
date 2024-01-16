@@ -37,7 +37,11 @@ app.set("trust-proxy", true);
 app.disable("x-powered-by");
 app.use((0, cors_1.default)());
 app.get("/", (req, res) => {
-    res.redirect("/ip");
+    const home = {
+        success: false,
+        message: "Missing authorisation key",
+    };
+    res.json(home);
 });
 app.use("/ip", ip_1.default);
 app.use("/agent", agent_1.default);
