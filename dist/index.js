@@ -27,6 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const ip_1 = __importDefault(require("./routes/ip"));
@@ -34,6 +35,7 @@ const agent_1 = __importDefault(require("./routes/agent"));
 const app = (0, express_1.default)();
 app.set("trust-proxy", true);
 app.disable("x-powered-by");
+app.use((0, cors_1.default)());
 app.get("/", (req, res) => {
     res.redirect("/ip");
 });

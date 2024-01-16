@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -9,6 +10,8 @@ const app = express();
 
 app.set("trust-proxy", true);
 app.disable("x-powered-by");
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.redirect("/ip");
