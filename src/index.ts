@@ -3,6 +3,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 import ipRoute from "./routes/ip";
+import agentRoute from "./routes/agent";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/ip", ipRoute);
+app.use("/agent", agentRoute);
 
 app.listen(process.env.PORT || 3000, () =>
   console.log(`🚀 Server is now running on port ${process.env.PORT || 3000}`)

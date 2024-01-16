@@ -30,6 +30,7 @@ const express_1 = __importDefault(require("express"));
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const ip_1 = __importDefault(require("./routes/ip"));
+const agent_1 = __importDefault(require("./routes/agent"));
 const app = (0, express_1.default)();
 app.set("trust-proxy", true);
 app.disable("x-powered-by");
@@ -37,4 +38,5 @@ app.get("/", (req, res) => {
     res.redirect("/ip");
 });
 app.use("/ip", ip_1.default);
+app.use("/agent", agent_1.default);
 app.listen(process.env.PORT || 3000, () => console.log(`🚀 Server is now running on port ${process.env.PORT || 3000}`));

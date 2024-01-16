@@ -1,10 +1,11 @@
 import express from "express";
+import useragent from "useragent";
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  const ip = req.socket.remoteAddress;
+  const agent = useragent.parse(req.headers["user-agent"]).toString();
   res.type("text/plain");
-  res.send(ip);
+  res.send(agent);
 });
 
 export default router;
