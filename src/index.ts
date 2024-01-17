@@ -8,10 +8,7 @@ import agentRoute from "./routes/agent";
 
 const app = express();
 
-app.set("trust-proxy", true);
-app.disable("x-powered-by");
-
-app.use(cors());
+app.set("trust-proxy", true).disable("x-powered-by").use(cors());
 
 app.get("/", (req, res) => {
   const home = {
