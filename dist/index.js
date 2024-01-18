@@ -41,6 +41,12 @@ app.get("/", (req, res) => {
     };
     res.json(home);
 });
+app.use((req, res, next) => {
+    res.status(404).json({
+        success: false,
+        message: "Not found",
+    });
+});
 app.use("/ip", ip_1.default);
 app.use("/agent", agent_1.default);
 app.listen(process.env.PORT || 3000, () => console.log(`🚀 Server is now running on port ${process.env.PORT || 3000}`));
