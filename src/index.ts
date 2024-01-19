@@ -21,7 +21,6 @@ app.get("/", (req, res) => {
 app.use("/ip", ipRoute);
 app.use("/agent", agentRoute);
 
-
 // 404
 app.use((req, res, next) => {
   res.status(404).json({
