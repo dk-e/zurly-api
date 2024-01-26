@@ -32,6 +32,9 @@ dependencies:
   geoip-lite:
     specifier: ^1.4.9
     version: 1.4.9
+  render2:
+    specifier: ^1.3.0
+    version: 1.3.0
   useragent:
     specifier: ^2.3.0
     version: 2.3.0
@@ -1027,6 +1030,12 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /render2@1.3.0:
+    resolution: {integrity: sha512-zPMQ7j5qVaGuxMNrBAZqufXnVzIGgy/2lisHmJh7J+dDNut1nA/RPMNd47YeyIV2P/DjY5p176Ggho0A/qQT6w==}
+    dependencies:
+      range-parser: 1.2.1
+    dev: false
 
   /request@2.88.2:
     resolution: {integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==}
