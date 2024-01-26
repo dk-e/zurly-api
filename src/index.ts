@@ -13,12 +13,14 @@ const app = express();
 
 app.set("trust-proxy", true).disable("x-powered-by").use(cors());
 
+// Home route
 app.get("/", (req, res) => {
-  const home = {
-    success: false,
-    message: "Missing authorisation key",
+  const routes = {
+    ip: "/ip",
+    agent: "/agent",
+    json: "append /json to the end of any of the above routes for a json format!",
   };
-  res.json(home);
+  res.json({ routes });
 });
 
 // Raw routes
