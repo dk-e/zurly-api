@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
     const routes = {
         ip: "/ip",
         agent: "/agent",
-        json: "append /json to the end of any of the above routes for a json format!",
+        json: "Add /json to routes for JSON format",
     };
     res.json({ routes });
 });
