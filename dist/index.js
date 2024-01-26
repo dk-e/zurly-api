@@ -32,17 +32,25 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const ip_1 = __importDefault(require("./routes/ip"));
 const agent_1 = __importDefault(require("./routes/agent"));
+const json_1 = __importDefault(require("./routes/ip/json"));
+const json_2 = __importDefault(require("./routes/agent/json"));
 const app = (0, express_1.default)();
 app.set("trust-proxy", true).disable("x-powered-by").use((0, cors_1.default)());
+// Home route
 app.get("/", (req, res) => {
-    const home = {
-        success: false,
-        message: "Missing authorisation key",
+    const routes = {
+        ip: "/ip",
+        agent: "/agent",
+        json: "append /json to the end of any of the above routes for a json format!",
     };
-    res.json(home);
+    res.json({ routes });
 });
+// Raw routes
 app.use("/ip", ip_1.default);
 app.use("/agent", agent_1.default);
+// JSON routes
+app.use("/ip/json", json_1.default);
+app.use("/agent/json", json_2.default);
 // 404
 app.use((req, res, next) => {
     res.status(404).json({
