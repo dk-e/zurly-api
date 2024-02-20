@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     agent: "/agent",
     json: "Add /json to routes for JSON format",
   };
-  res.json({ routes });
+  res.status(200).json({ routes });
 });
 
 // Raw routes

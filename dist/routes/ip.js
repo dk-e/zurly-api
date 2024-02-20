@@ -7,6 +7,6 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 router.get("/", (req, res) => {
     const ip = req.headers["x-real-ip"] || req.socket.remoteAddress;
-    res.type("text/plain").send(ip);
+    res.status(200).type("text/plain").send(ip);
 });
 exports.default = router;

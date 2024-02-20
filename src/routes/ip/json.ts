@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   const ip = req.headers["x-real-ip"] || req.socket.remoteAddress;
-  res.json({
+  res.status(200).json({
     success: true,
     ip,
   });
