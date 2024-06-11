@@ -15,12 +15,12 @@ app.set("trust-proxy", true).disable("x-powered-by").use(cors());
 
 // Home route
 app.get("/", (req, res) => {
-  const routes = {
-    ip: "/ip",
-    agent: "/agent",
-    json: "Add /json to routes for JSON format",
-  };
-  res.status(200).json({ routes });
+    const routes = {
+        ip: "/ip",
+        agent: "/agent",
+        json: "Add /json to routes for JSON format",
+    };
+    res.status(200).json({ routes });
 });
 
 // Raw routes
@@ -33,12 +33,10 @@ app.use("/agent/json", agentRouteJson);
 
 // 404
 app.use((req, res, next) => {
-  res.status(404).json({
-    success: false,
-    message: "404 - Not found",
-  });
+    res.status(404).json({
+        success: false,
+        message: "404 - Not found",
+    });
 });
 
-app.listen(process.env.PORT || 3000, () =>
-  console.log(`🚀 Server is now running on port ${process.env.PORT || 3000}`)
-);
+app.listen(process.env.PORT || 3000, () => console.log(`🚀 Server is now running on port ${process.env.PORT || 3000}`));
