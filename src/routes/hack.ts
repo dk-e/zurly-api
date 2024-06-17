@@ -1,5 +1,5 @@
 import express from "express";
-const router = express();
+const router = express.Router();
 
 router.post("/", (req, res) => {
     console.log("Cookies received:", req.body.cookies);
