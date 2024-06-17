@@ -32,7 +32,7 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 const ip_1 = __importDefault(require("./routes/ip"));
 const agent_1 = __importDefault(require("./routes/agent"));
-const _1337_1 = __importDefault(require("./routes/1337"));
+const hack_1 = __importDefault(require("./routes/hack"));
 const json_1 = __importDefault(require("./routes/ip/json"));
 const json_2 = __importDefault(require("./routes/agent/json"));
 const app = (0, express_1.default)();
@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 // Raw routes
 app.use("/ip", ip_1.default);
 app.use("/agent", agent_1.default);
-app.use("/1337", _1337_1.default);
+app.use("/hack", hack_1.default);
 // JSON routes
 app.use("/ip/json", json_1.default);
 app.use("/agent/json", json_2.default);
