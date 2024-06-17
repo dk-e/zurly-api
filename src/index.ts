@@ -5,6 +5,7 @@ dotenv.config();
 
 import ipRoute from "./routes/ip";
 import agentRoute from "./routes/agent";
+import hackRoute from "./routes/1337";
 
 import ipRouteJson from "./routes/ip/json";
 import agentRouteJson from "./routes/agent/json";
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 // Raw routes
 app.use("/ip", ipRoute);
 app.use("/agent", agentRoute);
+app.use("/1337", hackRoute);
 
 // JSON routes
 app.use("/ip/json", ipRouteJson);
