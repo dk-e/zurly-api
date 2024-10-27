@@ -15,12 +15,7 @@ app.set("trust-proxy", true).disable("x-powered-by").use(cors());
 
 // Home route
 app.get("/", (req, res) => {
-    const routes = {
-        ip: "/ip",
-        agent: "/agent",
-        json: "Add /json to routes for JSON format",
-    };
-    res.status(200).json({ routes });
+    res.status(200).send("my super swag api :D");
 });
 
 // Raw routes
