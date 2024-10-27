@@ -15,7 +15,7 @@ app.set("trust-proxy", true).disable("x-powered-by").use(cors());
 
 // Home route
 app.get("/", (req, res) => {
-    res.status(200).send("my super swag api :D");
+    res.status(200).type("text/plain").send("dan's super swag api :D");
 });
 
 // Raw routes

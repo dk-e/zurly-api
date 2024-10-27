@@ -38,12 +38,7 @@ const app = (0, express_1.default)();
 app.set("trust-proxy", true).disable("x-powered-by").use((0, cors_1.default)());
 // Home route
 app.get("/", (req, res) => {
-    const routes = {
-        ip: "/ip",
-        agent: "/agent",
-        json: "Add /json to routes for JSON format",
-    };
-    res.status(200).json({ routes });
+    res.status(200).type("text/plain").send("dan's super swag api :D");
 });
 // Raw routes
 app.use("/ip", ip_1.default);
